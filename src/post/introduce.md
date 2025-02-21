@@ -1,6 +1,7 @@
 ---
 title: "Introduce"
 date: "2025-02-22"
+thumbnail: "/images/3.png"
 ---
 
 소개 페이지.

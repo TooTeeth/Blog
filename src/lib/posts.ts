@@ -13,6 +13,7 @@ export interface PostData {
   title: string;
   date: string;
   contentHtml: string;
+  thumbnail?: string;
 }
 
 export function getSortedPostsData(): Array<Omit<PostData, "contentHtml">> {
@@ -27,6 +28,7 @@ export function getSortedPostsData(): Array<Omit<PostData, "contentHtml">> {
       id,
       title: matterResult.data.title,
       date: matterResult.data.date,
+      thumbnail: matterResult.data.thumbnail || null,
     };
   });
 
@@ -49,5 +51,6 @@ export async function getPostData(id: string): Promise<PostData> {
     title: matterResult.data.title,
     date: matterResult.data.date,
     /*matter()는 data 형태로 저장하기 때문에 data를 붙여야함. */
+    thumbnail: matterResult.data.thumbnail || null,
   };
 }
